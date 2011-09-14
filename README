@@ -1,0 +1,93 @@
+IMDb Scraper v. 1.0 - 14th of September, 2011
+
+Scrapes information about movie and TV show titles from IMDb (imdb.com).
+
+By Aram Kocharyan
+http://ak.net84.net/php/imdb-scraper/
+akarmenia@gmail.com
+twitter.com/akarmenia
+
+The simplest example is given below, see sample.php for more functions:
+
+<?php
+    require_once('imdb_scraper.php');
+    // Perform a search and get info on 'inception'
+    $output = IMDbScraper::get('inception');
+    var_dump($output);
+?>
+
+Output:
+
+array(17) {
+  ["name"]=>
+  string(9) "Inception"
+  ["desc"]=>
+  string(205) "In a world where technology exists to enter the human mind through dream invasion, a highly skilled thief is given a final chance at redemption which involves executing his toughest job to date: Inception."
+  ["date"]=>
+  string(4) "2010"
+  ["duration"]=>
+  string(7) "148 min"
+  ["director"]=>
+  string(0) ""
+  ["writer"]=>
+  string(17) "Christopher Nolan"
+  ["creator"]=>
+  string(0) ""
+  ["cast"]=>
+  array(15) {
+    [0]=>
+    string(17) "Leonardo DiCaprio"
+    [1]=>
+    string(20) "Joseph Gordon-Levitt"
+    [2]=>
+    string(10) "Ellen Page"
+    [3]=>
+    string(9) "Tom Hardy"
+    [4]=>
+    string(12) "Ken Watanabe"
+    [5]=>
+    string(10) "Dileep Rao"
+    [6]=>
+    string(14) "Cillian Murphy"
+    [7]=>
+    string(12) "Tom Berenger"
+    [8]=>
+    string(16) "Marion Cotillard"
+    [9]=>
+    string(18) "Pete Postlethwaite"
+    [10]=>
+    string(13) "Michael Caine"
+    [11]=>
+    string(10) "Lukas Haas"
+    [12]=>
+    string(10) "Tai-Li Lee"
+    [13]=>
+    string(12) "Claire Geare"
+    [14]=>
+    string(12) "Magnus Nolan"
+  }
+  ["genres"]=>
+  array(3) {
+    [0]=>
+    string(6) "Action"
+    [1]=>
+    string(9) "Adventure"
+    [2]=>
+    string(6) "Sci-Fi"
+  }
+  ["plot"]=>
+  string(927) "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible-inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming."
+  ["rating"]=>
+  string(3) "8.9"
+  ["max-rating"]=>
+  string(2) "10"
+  ["voter-count"]=>
+  string(7) "413,580"
+  ["user-review-count"]=>
+  string(5) "2,095"
+  ["critic-review-count"]=>
+  string(3) "524"
+  ["id"]=>
+  string(9) "tt1375666"
+  ["url"]=>
+  string(36) "http://www.imdb.com/title/tt1375666/"
