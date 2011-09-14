@@ -138,8 +138,10 @@ Class IMDbScraper {
 		$result['date'] = $date;
 		$result['duration'] = regex_get('#class="absmiddle"[^<]*?(\d+\s*min)#msi', $html, 1);
 		
-		$result['director'] = regex_get('#"director">(.*?)<#msi', $html, 1);
+		// Only for Movies
+		$result['director'] = regex_get('#writer.*?([\s\w]*)</a#msi', $html, 1);
 		$result['writer'] = regex_get('#writer.*?([\s\w]*)</a#msi', $html, 1);
+		// Only for TV shows
 		$result['creator'] = regex_get('#creator.*?([\s\w]*)</a#msi', $html, 1);
 		
 		$result['cast'] = array();
