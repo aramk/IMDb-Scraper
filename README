@@ -7,7 +7,7 @@ http://ak.net84.net/php/imdb-scraper/
 akarmenia@gmail.com
 twitter.com/akarmenia
 
-The simplest example is given below, see sample.php for more functions:
+The simplest example is given below, see example.php for more functions:
 
 <?php
     require_once('imdb_scraper.php');
@@ -28,7 +28,7 @@ array(17) {
   ["duration"]=>
   string(7) "148 min"
   ["director"]=>
-  string(0) ""
+  string(0) "Christopher Nolan"
   ["writer"]=>
   string(17) "Christopher Nolan"
   ["creator"]=>
