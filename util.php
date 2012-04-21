@@ -14,7 +14,7 @@ function curl_get_html($url) {
 	
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	if ($http_code < 200 || $http_code >= 400) {
-		return FALSE;
+		throw new Exception("cURL received HTTP code ".$http_code);
 	}
 	
 	curl_close($ch);

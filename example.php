@@ -12,8 +12,12 @@ The simplest example to use in your own code is: */
 	require_once('imdb_scraper.php');
 	require_once('csv.php'); // CSV helper functions
 	
-	$output = IMDbScraper::get('inception');
-	var_dump($output);
+	try {
+		$output = IMDbScraper::get('inception');
+		var_dump($output);
+	} catch (Exception $e) {
+		var_dump($e);
+	}
 
 /* This will return a key-value array, or FALSE if something hairy comes up. */
 

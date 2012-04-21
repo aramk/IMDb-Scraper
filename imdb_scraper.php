@@ -34,12 +34,13 @@ Class IMDbScraper {
 	// Return array of info for a given IMDb id string. eg. 'tt0206512'
 	public static function info($id) {
 		if (!is_string($id)) {
-			return FALSE;
+			throw new Exception("The title must be a string");
 		} else {
 			$id = preg_replace('#[^t\d]#', '', $id);
 		}
 		
 		$url = 'http://www.imdb.com/title/' . $id . '/';
+		
 		if ( ($html = curl_get_html($url)) !== FALSE ) {
 			$info = self::scrape_info($html);
 			$info['id'] = $id;
@@ -54,7 +55,7 @@ Class IMDbScraper {
 	// Returns the list of IMDb search results for the given title query.
 	function search($title) {
 		if ( !is_string($title) ) {
-			return FALSE;
+			throw new Exception("The title '".$title."' is not valid");
 		}
 		$url = 'http://www.imdb.com/find?s=tt&q=' . urlencode($title);
 		$html = curl_get_html($url);
@@ -65,7 +66,7 @@ Class IMDbScraper {
 	// Performs an IMDb search and finds the best match to the given title and year.
 	function find($title, $year = NULL) {
 		if ( !is_string($title) || empty($title) ) {
-			return FALSE;
+			throw new Exception("The title is not valid");
 		}
 		$query = $title;
 		if ( is_string($year) ) {
