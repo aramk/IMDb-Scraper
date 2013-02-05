@@ -3,9 +3,8 @@ IMDb Scraper v. 1.0 - 14th of September, 2011
 Scrapes information about movies and TV shows from IMDb (imdb.com).
 
 By Aram Kocharyan
-http://ak.net84.net/projects/imdb-scraper/
-akarmenia@gmail.com
-twitter.com/akarmenia
+http://aramk.com/projects/imdb-scraper/
+Released under the MIT licence
 
 The simplest example is given below, see example.php for more functions:
 
